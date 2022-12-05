@@ -1,4 +1,4 @@
-# 10 Object-Oriented Programming: Team Profile Generator
+cd # 10 Object-Oriented Programming: Team Profile Generator
 
 ## Your Task
 

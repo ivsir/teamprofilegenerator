@@ -1,4 +1,4 @@
-const Employee = require("../lib/Employee");
+ const Employee = require("../lib/Employee");
 
 describe("Testing Employee Class", () => {
     it("should be able to create instance", () => {
