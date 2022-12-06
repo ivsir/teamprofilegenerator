@@ -1,8 +1,9 @@
 // bring Inquirer
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateTeam = require("./src/page-template.js");
 
-const Engineer = require("./lib/engineer");
+const Engineer = require("./lib/engineer.js");
 const Intern = require("./lib/intern");
 const Manager = require("./lib/manager");
 // create a function that run inquirer prompt questions. then(() => inquirer.prompt()then) // chain promises
@@ -26,8 +27,8 @@ const questions = [
   {
     type: "list",
     message: "What is your position?",
-    name: "role",
     choices: ["Engineer", "Intern", "Manager"],
+    name: "role",
   },
 ];
 
@@ -55,37 +56,41 @@ const managerQuestion = [
   },
 ];
 
+const addMember = [
+  {
+    type: "list",
+    message: "What would you like to do next?",
+    choices: ["Add a new member.", "Finalize team."],
+    name: "addMember",
+  },
+];
+
 const staffData = [];
 
-// TODO: Create a function to write README file
 inquirer.prompt(questions).then((answers) => {
   const template = ``;
 
   fs.writeFile("./index.html", template, () => {
     console.log(answers);
   });
+
   if (answers.role == "Engineer") {
     inquirer.prompt(engineerQuestion).then((userAns) => {
       fs.appendFile("./index.html", template, () => {
-        console.log(userAns);
+        const newEngineer = new Engineer
+          (answers.name, answers.id, answers.email, userAns.username);
+        staffData.push(newEngineer);
+        console.log(staffData);
       });
-      return userAns.username;
     });
-    const newEngineer = new Engineer[
-      (answers.name, answers.id, answers.email, userAns.username)
-    ];
-    staffData.push(newEngineer);
     console.log(staffData);
-  }
-
-  if (answers.role == "Intern") {
+  } else if (answers.role == "Intern") {
     inquirer.prompt(internQuestion).then((schoolAns) => {
       fs.appendFile("./index.html", template, () => {
         console.log(schoolAns);
       });
     });
-  }
-  if (answers.role == "Manager") {
+  } else if (answers.role == "Manager") {
     inquirer.prompt(managerQuestion).then((officeAns) => {
       fs.appendFile("./index.html", template, () => {
         console.log(officeAns);
