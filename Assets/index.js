@@ -1,7 +1,7 @@
 // bring Inquirer
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateTeam = require("./src/page-template.js");
+// const generateTeam = require("./src/page-template.js");
 
 const Engineer = require("./lib/engineer.js");
 const Intern = require("./lib/intern");
@@ -56,7 +56,7 @@ const managerQuestion = [
   },
 ];
 
-const addMember = [
+const addMemberQuestion = [
   {
     type: "list",
     message: "What would you like to do next?",
@@ -67,46 +67,72 @@ const addMember = [
 
 const staffData = [];
 
-inquirer.prompt(questions).then((answers) => {
-  fs.writeFile("./index.html", template, () => {});
+const roleQuestions = () => {
+  inquirer.prompt(questions).then((answers) => {
+    // fs.writeFile("./index.html", template, () => {});
 
-  if (answers.role == "Engineer") {
-    inquirer.prompt(engineerQuestion).then((userAns) => {
-      //   fs.appendFile("./index.html", template, () => {
-      const newEngineer = new Engineer(
-        answers.name,
-        answers.id,
-        answers.email,
-        userAns.username
-      );
-      staffData.push(newEngineer);
-    });
-    // });
-    console.log(staffData);
-  } else if (answers.role == "Intern") {
-    inquirer.prompt(internQuestion).then((schoolAns) => {
-      //   fs.appendFile("./index.html", template, () => {
-      const newIntern = new Intern(
-        answers.name,
-        answers.id,
-        answers.email,
-        schoolAns.currentSchool
-      );
-      staffData.push(newIntern);
-    });
-    // });
-  } else if (answers.role == "Manager") {
-    inquirer.prompt(managerQuestion).then((officeAns) => {
-      //   fs.appendFile("./index.html", template, () => {
-      const newManager = new Manager(
-        answers.name,
-        answers.id,
-        answers.email,
-        officeAns.officeNumber
-      );
-      staffData.push(newManager);
+    if (answers.role == "Engineer") {
+      inquirer.prompt(engineerQuestion).then((userAns) => {
+        //   fs.appendFile("./index.html", template, () => {
+        const newEngineer = new Engineer(
+          answers.name,
+          answers.id,
+          answers.email,
+          userAns.username
+        );
+        staffData.push(newEngineer);
+        addToTeam();
+      });
+      // });
       console.log(staffData);
-    });
-    // });
-  }
-});
+    } else if (answers.role == "Intern") {
+      inquirer.prompt(internQuestion).then((schoolAns) => {
+        //   fs.appendFile("./index.html", template, () => {
+        const newIntern = new Intern(
+          answers.name,
+          answers.id,
+          answers.email,
+          schoolAns.currentSchool
+        );
+        staffData.push(newIntern);
+        addToTeam();
+      });
+      // });
+    } else if (answers.role == "Manager") {
+      inquirer.prompt(managerQuestion).then((officeAns) => {
+        //   fs.appendFile("./index.html", template, () => {
+        const newManager = new Manager(
+          answers.name,
+          answers.id,
+          answers.email,
+          officeAns.officeNumber
+        );
+        staffData.push(newManager);
+        console.log(staffData);
+        addToTeam();
+      });
+      // });
+    }
+  });
+};
+
+const addToTeam = () => {
+  inquirer.prompt(addMemberQuestion).then((addMemberAns) => {
+    if (addMemberAns.addMember === "Add a new member.") {
+      console.log("member added");
+      return roleQuestions();
+    }
+    return createTeam();
+  });
+};
+
+roleQuestions();
+
+function createTeam() {
+  console.log("Team finalized", staffData);
+  //   fs.writeFileSync(
+  //     "./index.html",
+  //     generateTeam(staffData),
+  //     "utf-8"
+  //   );
+}
