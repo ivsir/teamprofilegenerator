@@ -7,35 +7,59 @@ const Engineer = require("./lib/engineer.js");
 const Intern = require("./lib/intern");
 const Manager = require("./lib/manager");
 // create a function that run inquirer prompt questions. then(() => inquirer.prompt()then) // chain promises
-const questions = [
+
+const managerQuestions = [
   {
     type: "input",
-    message: "What is your name?",
+    message: "Who is your team manager?",
+    name: "name",
+  },
+  {
+    type: "input",
+    message: "What is their ID number?",
+    name: "id",
+  },
+  {
+    type: "input",
+    message: "What is their email?",
+    name: "email",
+  },
+  {
+    type: "input",
+    message: "What is their office number?",
+    name: "officeNumber",
+  },
+];
+
+const employeeQuestions = [
+  {
+    type: "list",
+    message: "What position would you like to add?",
+    choices: ["Engineer", "Intern"],
+    name: "role",
+  },
+  {
+    type: "input",
+    message: "What is their name?",
     name: "name",
   },
 
   {
     type: "input",
-    message: "What is your ID number?",
+    message: "What is their ID number?",
     name: "id",
   },
   {
     type: "input",
-    message: "What is your email?",
+    message: "What is their email?",
     name: "email",
-  },
-  {
-    type: "list",
-    message: "What is your position?",
-    choices: ["Engineer", "Intern", "Manager"],
-    name: "role",
   },
 ];
 
 const engineerQuestion = [
   {
     type: "input",
-    message: "Please input your github username.",
+    message: "Please input their github username.",
     name: "username",
   },
 ];
@@ -43,16 +67,8 @@ const engineerQuestion = [
 const internQuestion = [
   {
     type: "input",
-    message: "What school do you currently attend?",
+    message: "What school do they currently attend?",
     name: "currentSchool",
-  },
-];
-
-const managerQuestion = [
-  {
-    type: "input",
-    message: "What is your office number?",
-    name: "officeNumber",
   },
 ];
 
@@ -67,10 +83,26 @@ const addMemberQuestion = [
 
 const staffData = [];
 
-const roleQuestions = () => {
-  inquirer.prompt(questions).then((answers) => {
-    // fs.writeFile("./index.html", template, () => {});
 
+const managerInfo = () => {
+  inquirer.prompt(managerQuestions).then((answers) => {
+    const newManager = new Manager(
+      answers.name,
+      answers.id,
+      answers.email,
+      answers.officeNumber
+    );
+    staffData.push(newManager);
+    employeeInfo();
+  });
+};
+
+managerInfo();
+
+
+
+const employeeInfo = () => {
+  inquirer.prompt(employeeQuestions).then((answers) => {
     if (answers.role == "Engineer") {
       inquirer.prompt(engineerQuestion).then((userAns) => {
         //   fs.appendFile("./index.html", template, () => {
@@ -84,7 +116,6 @@ const roleQuestions = () => {
         addToTeam();
       });
       // });
-      console.log(staffData);
     } else if (answers.role == "Intern") {
       inquirer.prompt(internQuestion).then((schoolAns) => {
         //   fs.appendFile("./index.html", template, () => {
@@ -97,36 +128,67 @@ const roleQuestions = () => {
         staffData.push(newIntern);
         addToTeam();
       });
-      // });
-    } else if (answers.role == "Manager") {
-      inquirer.prompt(managerQuestion).then((officeAns) => {
-        //   fs.appendFile("./index.html", template, () => {
-        const newManager = new Manager(
-          answers.name,
-          answers.id,
-          answers.email,
-          officeAns.officeNumber
-        );
-        staffData.push(newManager);
-        console.log(staffData);
-        addToTeam();
-      });
-      // });
     }
   });
 };
 
+// const roleQuestions = () => {
+//   inquirer.prompt(questions).then((answers) => {
+//     // fs.writeFile("./index.html", template, () => {});
+
+//     if (answers.role == "Engineer") {
+//       inquirer.prompt(engineerQuestion).then((userAns) => {
+//         //   fs.appendFile("./index.html", template, () => {
+//         const newEngineer = new Engineer(
+//           answers.name,
+//           answers.id,
+//           answers.email,
+//           userAns.username
+//         );
+//         staffData.push(newEngineer);
+//         addToTeam();
+//       });
+//       // });
+//     } else if (answers.role == "Intern") {
+//       inquirer.prompt(internQuestion).then((schoolAns) => {
+//         //   fs.appendFile("./index.html", template, () => {
+//         const newIntern = new Intern(
+//           answers.name,
+//           answers.id,
+//           answers.email,
+//           schoolAns.currentSchool
+//         );
+//         staffData.push(newIntern);
+//         addToTeam();
+//       });
+//       // });
+//     } else if (answers.role == "Manager") {
+//       inquirer.prompt(managerQuestion).then((officeAns) => {
+//         //   fs.appendFile("./index.html", template, () => {
+//         const newManager = new Manager(
+//           answers.name,
+//           answers.id,
+//           answers.email,
+//           officeAns.officeNumber
+//         );
+//         staffData.push(newManager);
+//         addToTeam();
+//       });
+//       // });
+//     }
+//   });
+// };
+
 const addToTeam = () => {
   inquirer.prompt(addMemberQuestion).then((addMemberAns) => {
     if (addMemberAns.addMember === "Add a new member.") {
-      console.log("member added");
-      return roleQuestions();
+      return employeeInfo();
     }
     return createTeam();
   });
 };
 
-roleQuestions();
+// employeeInfo();
 
 function createTeam() {
   console.log("Team finalized", staffData);
