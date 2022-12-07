@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../UCSD-VIRT-FSF-PT-09-2022-U-LOLC/05-Third-Party-APIs/01-Activities/11-Ins_Bootstrap-Components"
+		},
+		{
+			"path": "../../UCSD-VIRT-FSF-PT-09-2022-U-LOLC/05-Third-Party-APIs/01-Activities/12-Stu_Bootstrap-Components"
+		},
+		{
+			"path": "../../UCSD-VIRT-FSF-PT-09-2022-U-LOLC/05-Third-Party-APIs/01-Activities/13-Ins_Bootstrap-Layout"
+		},
+		{
+			"path": "../../UCSD-VIRT-FSF-PT-09-2022-U-LOLC/05-Third-Party-APIs/01-Activities/14-Stu_Bootstrap-Layout"
+		},
+		{
+			"path": "../../UCSD-VIRT-FSF-PT-09-2022-U-LOLC/05-Third-Party-APIs/01-Activities/15-Ins_Bootstrap-Utilities"
+		},
+		{
+			"path": "../../UCSD-VIRT-FSF-PT-09-2022-U-LOLC/05-Third-Party-APIs/01-Activities/16-Stu_Bootstrap-Utilities"
+		},
+		{
+			"path": "../../UCSD-VIRT-FSF-PT-09-2022-U-LOLC/05-Third-Party-APIs/01-Activities/17-Ins_Bootstrap-Extend"
+		},
+		{
+			"path": "../../UCSD-VIRT-FSF-PT-09-2022-U-LOLC/05-Third-Party-APIs/01-Activities/18-Stu_Bootstrap-Extend"
+		}
+	],
+	"settings": {}
+}

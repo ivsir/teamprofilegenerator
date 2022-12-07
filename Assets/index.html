@@ -11,6 +11,15 @@
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Teko:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Teko:wght@300;400&display=swap");
+    </style>
     <title>Team Profile Generator</title>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
@@ -20,34 +29,20 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg custom-navbar text-center">
-      <p class="text-center">My Team</p>
+      <p class="text-center" id="header">My Team</p>
     </nav>
     <div class="col-12 col-md-12">
-      <section class="row justify-content-around">
-        <div class="col-12 col-sm-6 col-lg-4 mb-3">
-          <div class="card">
-            <h3 class="card-header bg-info text-center" id="manager-card">Manager</h3>
-            <div class="card-body">
-              <p class="card-text" id="manager"></p>
-              <button class="btn btn-block btn-info">Learn more.</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-3">
-          <div class="card">
-            <h3 class="card-header bg-success">Service 2</h3>
-            <div class="card-body">
-              <p class="card-text"></p>
-              <button class="btn btn-block btn-info">Learn more.</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4 mb-3">
-          <div class="card">
-            <h3 class="card-header bg-warning">Service 3</h3>
-            <div class="card-body">
-              <p class="card-text"></p>
-              <button class="btn btn-block btn-info">Learn more.</button>
+      <section class="row justify-content-around" >
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div id="card">
+            <h3 class="card-header bg-info ml-5" id="card-header">
+              <li id="position">Manager</li>
+              <li id="name">Risvi</li>
+            </h3>
+            <div class="card-body" id="cardBody">
+              <li id="ID">ID:</li>
+              <li id="email">Email:</li>
+              <li id="office">Office Number:</li>
             </div>
           </div>
         </div>

@@ -145,9 +145,9 @@ const addToTeam = () => {
 
 function createTeam() {
   console.log("Team finalized", staffData);
-  //   fs.writeFileSync(
-  //     "./index.html",
-  //     generateTeam(staffData),
-  //     "utf-8"
-  //   );
+    fs.writeFileSync(
+      "./index.html",
+      generateTeam(staffData),
+      "utf-8"
+    );
 }

@@ -1,31 +1,62 @@
+
 :root {
-    --brown: #a88f82;
-    --tan: #f5e1d5;
-    --teal: #71a8a7;
-    --lightteal: #d5f5f5;
-    --light: #fffaf7;
-  }
-  
-  ::selection {
-    color: var(--brown);
-    background-color: var(--light);
-  }
-  
-  .custom-navbar {
-    background-color: var(--teal);
-    text-align: center;
-  }
-  
-  .custom-navbar a {
-    font-size: 1.5rem;
-    color: var(--lightteal);
-  }
-  
-  .custom-navbar a:hover {
-    color: var(--light);
-  }
-  
-  .custom-jumbotron {
-    background-color: var(--lightteal);
-    color: var(--teal);
-  }
+  --brown: #a88f82;
+  --tan: #f5e1d5;
+  --teal: #71a8a7;
+  --lightteal: #d5f5f5;
+  --light: #fffaf7;
+}
+
+::selection {
+  color: var(--brown);
+  background-color: var(--light);
+}
+
+.btn {
+  border-radius: 0px;
+}
+
+.custom-navbar {
+  background-color: var(--teal);
+  text-align: center;
+}
+
+.custom-navbar a {
+  font-size: 1.5rem;
+  color: var(--lightteal);
+}
+
+.custom-navbar a:hover {
+  color: var(--light);
+}
+
+.custom-jumbotron {
+  background-color: var(--lightteal);
+  color: var(--teal);
+}
+
+li {
+  margin: 5px;
+  padding-left: 3rem;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+  font-family: "Teko", sans-serif;
+}
+
+#cardBody {
+  margin-top: 0;
+  background-color: aliceblue;
+}
+
+#card {
+  border-style: solid;
+  border-radius: 2px;
+}
+
+#card-header {
+  margin-top: 0;
+}
+
+#header {
+font-size: 5rem;
+}
