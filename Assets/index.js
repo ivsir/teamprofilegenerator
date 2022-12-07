@@ -1,7 +1,7 @@
 // bring Inquirer
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const generateTeam = require("./src/page-template.js");
+const generateTeam = require("./src/page-template.js");
 
 const Engineer = require("./lib/engineer.js");
 const Intern = require("./lib/intern");
@@ -140,8 +140,6 @@ const addToTeam = () => {
     return createTeam();
   });
 };
-
-
 
 function createTeam() {
   console.log("Team finalized", staffData);

@@ -1,52 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&family=Teko:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Teko:wght@300;400&display=swap");
-    </style>
-    <title>Team Profile Generator</title>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
-      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg custom-navbar text-center">
-      <p class="text-center" id="header">My Team</p>
-    </nav>
-    <div class="col-12 col-md-12">
-      <section class="row justify-content-around" >
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div id="card">
-            <h3 class="card-header bg-info ml-5" id="card-header">
-              <li id="position">Manager</li>
-              <li id="name">Risvi</li>
-            </h3>
-            <div class="card-body" id="cardBody">
-              <li id="ID">ID:</li>
-              <li id="email">Email:</li>
-              <li id="office">Office Number:</li>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </body>
-</html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins&family=Teko:wght@300;400&display=swap"
+          rel="stylesheet"
+        />
+        <style>
+          @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Teko:wght@300;400&display=swap");
+        </style>
+        <title>Team Profile Generator</title>
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+          crossorigin="anonymous"
+        ></script>
+      </head>
+        <body>
+            <nav class="navbar navbar-expand-lg custom-navbar text-center">
+            <p class="text-center" id="header">My Team</p>
+            </nav>
+            <div class="col-12 col-md-12">
+                <section class="row justify-content-around" >
+                    <div class="col-12 col-sm-6 col-lg-4">
+                    
+                      <div id="manager-card" class="card employee-card">
+                          <h3 class="card-header bg-info ml-5" id="card-header">
+                              <li id="position">Manager</li>
+                              <li id="name">Risvi</li>
+                          </h3>
+                          <div class="card-body" id="cardBody">
+                              <ul class="list-group">
+                                  <li id="managerID" class="list-group-item">ID: 27891</li>
+                                  <li id="managerEmail" class="list-group-item">Email: <a href="mailto:ivsirqerat@gmail.com">ivsirqerat@gmail.com</a></li>
+                                  <li id="office" class="list-group-item">Office Number: 235</li>
+                              </ul>
+                          </div>
+                      </div>
+        
+                      <div id="engineer-card" class="card employee-card">
+                          <h3 class="card-header bg-info ml-5" id="card-header">
+                              <li id="position">Engineer</li>
+                              <li id="name">Rasheem</li>
+                          </h3>
+                          <div class="card-body">
+                              <ul class="list-group">
+                                  <li id="engineerID" class="list-group-item">ID: 71289</li>
+                                  <li id="engineerEmail" class="list-group-item">Email: <a href="mailto:rashut@gmail.com">rashut@gmail.com</a></li>
+                                  <li id="github" class="list-group-item">GitHub: <a href="https://github.com/undefined" target="_blank" rel="noopener noreferrer">undefined</a></li>
+                              </ul>
+                          </div>
+                      </div>
+        
+                      <div id="engineer-card" class="card employee-card">
+                          <h3 class="card-header bg-info ml-5" id="card-header">
+                              <li id="position">Engineer</li>
+                              <li id="name">Hailey</li>
+                          </h3>
+                          <div class="card-body">
+                              <ul class="list-group">
+                                  <li id="engineerID" class="list-group-item">ID: 17892</li>
+                                  <li id="engineerEmail" class="list-group-item">Email: <a href="mailto:hailey@gmail.com">hailey@gmail.com</a></li>
+                                  <li id="github" class="list-group-item">GitHub: <a href="https://github.com/undefined" target="_blank" rel="noopener noreferrer">undefined</a></li>
+                              </ul>
+                          </div>
+                      </div>
+        
+                      <div id="intern-card" class="card employee-card">
+                          <h3 class="card-header bg-info ml-5" id="card-header">
+                              <li id="position">Intern</li>
+                              <li id="name">Hailey</li>
+                          </h3>
+                          <div class="card-body">
+                              <ul class="list-group">
+                                  <li id="internID" class="list-group-item">ID: 23467899</li>
+                                  <li id="internEmail" class="list-group-item">Email: <a href="mailto:hailea@gmail.com">hailea@gmail.com</a></li>
+                                  <li id="school" class="list-group-item">School: UCSI</li>
+                              </ul>
+                          </div>
+                      </div>
+        
+                    </div>
+                 </section>
+             </div>
+        </body>
+    </html>
+
+    
