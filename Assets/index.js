@@ -105,7 +105,6 @@ const employeeInfo = () => {
   inquirer.prompt(employeeQuestions).then((answers) => {
     if (answers.role == "Engineer") {
       inquirer.prompt(engineerQuestion).then((userAns) => {
-        //   fs.appendFile("./index.html", template, () => {
         const newEngineer = new Engineer(
           answers.name,
           answers.id,
@@ -115,10 +114,9 @@ const employeeInfo = () => {
         staffData.push(newEngineer);
         addToTeam();
       });
-      // });
+      
     } else if (answers.role == "Intern") {
       inquirer.prompt(internQuestion).then((schoolAns) => {
-        //   fs.appendFile("./index.html", template, () => {
         const newIntern = new Intern(
           answers.name,
           answers.id,
