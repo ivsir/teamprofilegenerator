@@ -132,53 +132,6 @@ const employeeInfo = () => {
   });
 };
 
-// const roleQuestions = () => {
-//   inquirer.prompt(questions).then((answers) => {
-//     // fs.writeFile("./index.html", template, () => {});
-
-//     if (answers.role == "Engineer") {
-//       inquirer.prompt(engineerQuestion).then((userAns) => {
-//         //   fs.appendFile("./index.html", template, () => {
-//         const newEngineer = new Engineer(
-//           answers.name,
-//           answers.id,
-//           answers.email,
-//           userAns.username
-//         );
-//         staffData.push(newEngineer);
-//         addToTeam();
-//       });
-//       // });
-//     } else if (answers.role == "Intern") {
-//       inquirer.prompt(internQuestion).then((schoolAns) => {
-//         //   fs.appendFile("./index.html", template, () => {
-//         const newIntern = new Intern(
-//           answers.name,
-//           answers.id,
-//           answers.email,
-//           schoolAns.currentSchool
-//         );
-//         staffData.push(newIntern);
-//         addToTeam();
-//       });
-//       // });
-//     } else if (answers.role == "Manager") {
-//       inquirer.prompt(managerQuestion).then((officeAns) => {
-//         //   fs.appendFile("./index.html", template, () => {
-//         const newManager = new Manager(
-//           answers.name,
-//           answers.id,
-//           answers.email,
-//           officeAns.officeNumber
-//         );
-//         staffData.push(newManager);
-//         addToTeam();
-//       });
-//       // });
-//     }
-//   });
-// };
-
 const addToTeam = () => {
   inquirer.prompt(addMemberQuestion).then((addMemberAns) => {
     if (addMemberAns.addMember === "Add a new member.") {
@@ -188,7 +141,7 @@ const addToTeam = () => {
   });
 };
 
-// employeeInfo();
+
 
 function createTeam() {
   console.log("Team finalized", staffData);
