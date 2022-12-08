@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../UCSD-VIRT-FSF-PT-09-2022-U-LOLC/10-OOP"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "teamprofilegenerator"
+	}
+}
