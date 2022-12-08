@@ -14,6 +14,11 @@ The application generates a webpage containing information about a company's tea
 </nav>
 
 ## Usage
+
+
+https://user-images.githubusercontent.com/106352994/206342531-41c48466-8dd9-4e3b-84a3-4540292fb3f6.mp4
+
+
 <img src="media/teamprofilegenerator.mp4">
 <img src="media/webpage.png">
 
